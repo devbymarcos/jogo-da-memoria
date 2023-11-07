@@ -37,6 +37,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 4px;
 }
 .header-title ul li {
   list-style: none;
@@ -76,6 +77,7 @@ img {
 .footer {
   width: 100%;
   margin: 2rem auto;
+  padding: 5px;
 }
 
 .footer ul {
@@ -111,6 +113,7 @@ img {
   gap: 2rem;
   align-items: center;
   margin-bottom: 1rem;
+  padding: 4px;
 }
 
 .bg-red {
@@ -128,4 +131,22 @@ img {
   color: #e74c3c;
   font-size: 1.6rem;
   font-weight: bold;
+}
+
+@media (max-width: 550px) {
+  .card {
+    width: calc(90% / 3);
+    height: 90px;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  body {
+    display: block;
+  }
+
+  #board {
+    padding: 8px;
+  }
 }
