@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Memória</title>
+  </head>
+
+  <body>
+    <div class="header-title container">
+      <h1 class="title">Jogo da Memória</h1>
+      <ul>
+        <li class="best-score">Best score : 0</li>
+      </ul>
+    </div>
+    <div class="controls container">
+      <button class="btn-start bg-blue">Play</button>
+      <div class="message-endgame"></div>
+    </div>
+    <div id="board" class="container"></div>
+    <footer class="footer container">
+      <ul>
+        <li class="score">Pontuação: 0</li>
+        <li class="guesses">Movimentos: 0</li>
+      </ul>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
