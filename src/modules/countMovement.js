@@ -1,5 +1,5 @@
 import endGame from "./endGame";
-let movement = 10;
+let movement = 20;
 
 const movementElement = document.querySelector(".guesses");
 
@@ -17,6 +17,6 @@ export function countMovement(plus) {
 }
 
 export function resetMovement() {
-  movement = 10;
+  movement = 20;
   movementElement.innerHTML = `Movimentos: ${movement}`;
 }

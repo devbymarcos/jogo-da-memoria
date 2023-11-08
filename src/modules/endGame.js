@@ -1,13 +1,18 @@
 import flipCard from "./flipCard";
-import { templateGameOver } from "./templates";
+import { templateGameOver, templateWinerGame } from "./templates";
 import { loadScore } from "./setScore";
-function endGame() {
+
+function endGame(winer = false) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.removeEventListener("click", flipCard);
   });
 
-  templateGameOver();
+  if (!winer) {
+    templateGameOver();
+  } else {
+    templateWinerGame();
+  }
   loadScore();
 }
 
