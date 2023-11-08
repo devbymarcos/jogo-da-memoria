@@ -25,28 +25,30 @@ img {
   max-width: 1147px;
   margin: 0 auto;
 }
-#board {
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}
+
+.header ul li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+.header .title {
+  color: rgb(68, 68, 68);
+  margin: 2rem 0;
+}
+
+.board {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   perspective: 1000px;
 }
-
-.header-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-}
-.header-title ul li {
-  list-style: none;
-}
-.header-title .title {
-  color: rgb(68, 68, 68);
-  margin: 2rem 0;
-}
-
 .card {
   width: 150px;
   height: 100px;
@@ -54,11 +56,6 @@ img {
   transition: transform 0.5s;
   transform-style: preserve-3d;
 }
-
-.card.flip {
-  transform: rotateY(180deg);
-}
-
 .front-face,
 .back-face {
   width: 100%;
@@ -74,25 +71,18 @@ img {
   transform: rotateY(180deg);
 }
 
-.footer {
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.controls {
   width: 100%;
-  margin: 2rem auto;
-  padding: 5px;
-}
-
-.footer ul {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
+  margin-bottom: 1rem;
+  padding: 4px;
 }
-.footer ul li {
-  list-style: none;
-  color: rgb(48, 48, 48);
-  font-size: 1.2rem;
-
-  font-weight: bold;
-}
-
 .btn-start {
   margin: 1rem 0;
   padding: 0.5rem 1.5rem;
@@ -107,14 +97,14 @@ img {
 .btn-start:hover {
   background-color: rgb(3, 74, 167);
 }
-.controls {
-  width: 100%;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding: 4px;
+
+.template-game-over {
+  color: #e74c3c;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
+
+/*#### utilitarios #####*/
 
 .bg-red {
   background-color: #e74c3c;
@@ -127,12 +117,7 @@ img {
   background-color: #2ecc71;
 }
 
-.template-game-over {
-  color: #e74c3c;
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
+/*#### Responsivo #####*/
 @media (max-width: 550px) {
   .card {
     width: calc(90% / 3);
@@ -146,7 +131,7 @@ img {
     display: block;
   }
 
-  #board {
+  .board {
     padding: 8px;
   }
 }

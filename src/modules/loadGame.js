@@ -4,9 +4,10 @@ import flipCard from "./flipCard";
 import { resetMovement } from "./countMovement";
 import { templateGameOver } from "./templates";
 import { loadScore, scoreGame } from "./setScore";
+
 let blockBoard = false;
 
-function playGame() {
+function loadGame() {
   loadImages();
   loadScore();
 
@@ -50,4 +51,4 @@ function playGame() {
   });
 }
 
-export default playGame;
+export default loadGame;
