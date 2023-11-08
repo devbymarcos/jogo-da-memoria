@@ -11,7 +11,7 @@ export function templateGameOver(clear = false) {
 
 export function templateBestScore(value) {
   const bestScoreElem = document.querySelector(".best-score");
-  bestScoreElem.innerHTML = `Best Score : ${value}`;
+  bestScoreElem.innerHTML = `Melhor Pontuação : ${value}`;
 }
 
 export function templateScoreGame(value) {
