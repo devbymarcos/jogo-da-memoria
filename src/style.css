@@ -11,13 +11,16 @@
   --blue: #3498db;
   --red: #e74c3c;
 
-  --text-color: #4b4b4b;
+  --text-color: #fffefe;
   --bg-body: #fff;
   --bg-modal: #fff;
 }
 
 body {
-  background-color: var(--bg-body);
+  background-image: url("/images/bg-board.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,10 +81,10 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 4px;
+  color: var(--text-color);
 }
 
 .header .title {
-  color: var(--text-color);
   margin: 2rem 0;
 }
 
@@ -94,6 +97,8 @@ li {
 }
 .score-box {
   margin-bottom: 1rem;
+  color: var(--text-color);
+  font-weight: bold;
 }
 .score-box ul {
   display: flex;
