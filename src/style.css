@@ -6,8 +6,18 @@
   font-family: "Montserrat", sans-serif;
 }
 
+:root {
+  --green: #3ce789;
+  --blue: #3498db;
+  --red: #e74c3c;
+
+  --text-color: #4b4b4b;
+  --bg-body: #fff;
+  --bg-modal: #fff;
+}
+
 body {
-  background-color: #fcfcfc;
+  background-color: var(--bg-body);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,12 +29,46 @@ img {
   max-width: 100%;
   width: 100%;
 }
-
 .container {
   width: 100%;
   max-width: 1147px;
   margin: 0 auto;
 }
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: var(--green);
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: var(--blue);
+}
+
+.bg-red {
+  background-color: #e74c3c;
+}
+.bg-blue {
+  background-color: #3498db;
+}
+
+.bg-green {
+  background-color: #2ecc71;
+}
+
+/*############
+#### APP #####
+##############
+*/
 
 .header {
   display: flex;
@@ -38,7 +82,7 @@ img {
   margin-bottom: 0.5rem;
 }
 .header .title {
-  color: rgb(68, 68, 68);
+  color: var(--text-color);
   margin: 2rem 0;
 }
 
@@ -83,20 +127,6 @@ img {
   margin-bottom: 1rem;
   padding: 4px;
 }
-.btn-start {
-  margin: 1rem 0;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  background-color: rgb(5, 160, 83);
-  border: none;
-  outline: none;
-  color: white;
-  border-radius: 4px;
-}
-.btn-start:hover {
-  background-color: rgb(3, 74, 167);
-}
 
 .template-game-over {
   color: #e74c3c;
@@ -108,18 +138,37 @@ img {
   font-size: 1.6rem;
   font-weight: bold;
 }
-
-/*#### utilitarios #####*/
-
-.bg-red {
-  background-color: #e74c3c;
+.modal-instruction {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  position: absolute;
+  background-color: var(--bg-modal);
+  top: 10rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  animation: topDown 0.5s ease-in;
 }
-.bg-blue {
-  background-color: #3498db;
+.modal-instruction.remove {
+  display: none;
 }
 
-.bg-green {
-  background-color: #2ecc71;
+@keyframes topDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-instruction p {
+  margin: 1rem 0;
+  line-height: 1.6rem;
 }
 
 /*#### Responsivo #####*/

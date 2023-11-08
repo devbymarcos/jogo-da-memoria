@@ -2,13 +2,6 @@ import { templateBestScore, templateScoreGame } from "./templates";
 
 let score = 0;
 
-export function setScore(score) {
-  const bestScore = localStorage.getItem("best-score");
-  if (parseInt(bestScore) < score) {
-    localStorage.setItem("best-score", score);
-  }
-}
-
 export function loadScore() {
   let bestScore = localStorage.getItem("best-score");
   if (!bestScore) {
@@ -16,6 +9,13 @@ export function loadScore() {
     localStorage.setItem("best-score", bestScore);
   }
   templateBestScore(bestScore);
+}
+
+export function updateBestScore(score) {
+  const bestScore = localStorage.getItem("best-score");
+  if (parseInt(bestScore) < score) {
+    localStorage.setItem("best-score", score);
+  }
 }
 
 export function scoreGame(reload = false) {

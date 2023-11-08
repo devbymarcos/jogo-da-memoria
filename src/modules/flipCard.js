@@ -1,7 +1,6 @@
 import disableCards from "./disableCards";
-import { countMovement } from "./countMovement";
-import { scoreGame, setScore } from "./setScore";
-import { templateScoreGame } from "./templates";
+import { countMovement } from "./movement";
+import { scoreGame, updateBestScore } from "./score";
 import endGame from "./endGame";
 
 let lockBoard = false;
@@ -21,22 +20,22 @@ export default function flipCard() {
   secondCard = this;
   hasFlipped = false;
 
-  checkMatch(firstCard, secondCard);
+  checkMatch();
 }
 
-function checkMatch(firstCard, secondCard) {
+function checkMatch() {
   if (firstCard.dataset.identity === secondCard.dataset.identity) {
     disableCards(firstCard, secondCard, flipCard);
-    setScore(scoreGame());
+    updateBestScore(scoreGame());
     countMovement(true);
     isFlipped();
     return;
   }
 
-  unflipCards(firstCard, secondCard);
+  unflipCards();
 }
 
-function unflipCards(firstCard, secondCard) {
+function unflipCards() {
   lockBoard = true;
   setTimeout(() => {
     firstCard.classList.remove("flip");

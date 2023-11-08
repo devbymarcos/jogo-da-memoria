@@ -1,6 +1,6 @@
 import flipCard from "./flipCard";
 import { templateGameOver, templateWinerGame } from "./templates";
-import { loadScore } from "./setScore";
+import { loadScore } from "./score";
 
 function endGame(winer = false) {
   const cards = document.querySelectorAll(".card");
