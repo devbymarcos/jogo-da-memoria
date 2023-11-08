@@ -29,6 +29,9 @@ img {
   max-width: 100%;
   width: 100%;
 }
+li {
+  list-style: none;
+}
 .container {
   width: 100%;
   max-width: 1147px;
@@ -77,10 +80,6 @@ img {
   padding: 4px;
 }
 
-.header ul li {
-  list-style: none;
-  margin-bottom: 0.5rem;
-}
 .header .title {
   color: var(--text-color);
   margin: 2rem 0;
@@ -92,6 +91,13 @@ img {
   flex-wrap: wrap;
   gap: 1rem;
   perspective: 1000px;
+}
+.score-box {
+  margin-bottom: 1rem;
+}
+.score-box ul {
+  display: flex;
+  gap: 3rem;
 }
 .card {
   width: 150px;
@@ -124,7 +130,7 @@ img {
   display: flex;
   gap: 2rem;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 4px;
 }
 
@@ -187,5 +193,12 @@ img {
 
   .board {
     padding: 8px;
+  }
+  .header .title {
+    font-size: 1.3rem;
+  }
+  .template-game-over,
+  .template-winer-game {
+    font-size: 1rem;
   }
 }
