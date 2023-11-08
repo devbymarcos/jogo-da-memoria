@@ -22,7 +22,7 @@ export function templateScoreGame(value) {
 export function templateWinerGame(clear = false) {
   const messageEndGameElem = document.querySelector(".message-endgame");
   if (!clear) {
-    const html = `<p class="template-winer-game">Uau !!, Voce atingiu a pontuação máxima</p>`;
+    const html = `<p class="template-winer-game">Parabéns !!, Você atingiu a pontuação máxima</p>`;
     messageEndGameElem.innerHTML = html;
   } else {
     const html = ``;
