@@ -4,15 +4,16 @@ import flipCard from "./flipCard";
 import { resetMovement } from "./movement";
 import { templateGameOver } from "./templates";
 import { loadScore, scoreGame } from "./score";
+import $ from "./selector";
 
 let blockBoard = false;
 
 function loadGame() {
   loadImages();
   loadScore();
-  const btnStart = document.querySelector(".btn-start");
-  const cards = document.querySelectorAll(".card");
-  const scoreElem = document.querySelector(".score");
+  const btnStart = $(".btn-start");
+  const cards = $(".card", "all");
+  const scoreElem = $(".score");
   //Play game
   btnStart.addEventListener("click", () => {
     scoreElem.innerHTML = `Pontuação: 0`;

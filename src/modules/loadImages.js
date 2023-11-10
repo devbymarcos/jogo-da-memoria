@@ -1,9 +1,10 @@
+import $ from "./selector";
 import images from "./dataImages";
 
 const repeat = 2;
 
 function loadImages() {
-  const board = document.querySelector("#board");
+  const board = $("#board");
   for (let i = 0; i < repeat; i++) {
     images.forEach((item) => {
       const image = document.createElement("img");

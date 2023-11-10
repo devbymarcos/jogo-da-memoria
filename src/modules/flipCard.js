@@ -2,6 +2,7 @@ import disableCards from "./disableCards";
 import { countMovement } from "./movement";
 import { scoreGame, updateBestScore } from "./score";
 import endGame from "./endGame";
+import $ from "./selector";
 
 let lockBoard = false;
 let hasFlipped = false;
@@ -47,7 +48,7 @@ function unflipCards() {
 }
 
 function isFlipped() {
-  const cards = document.querySelectorAll(".card");
+  const cards = $(".card", "all");
   let control = 0;
 
   cards.forEach((card) => {

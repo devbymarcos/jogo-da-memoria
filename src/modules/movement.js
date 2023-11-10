@@ -1,7 +1,8 @@
+import $ from "./selector";
 import endGame from "./endGame";
 let movement = 20;
 
-const movementElement = document.querySelector(".guesses");
+const movementElement = $(".guesses");
 
 export function countMovement(plus) {
   if (plus) {

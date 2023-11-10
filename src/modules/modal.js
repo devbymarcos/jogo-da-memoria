@@ -1,6 +1,8 @@
+import $ from "./selector";
+
 export default function modal() {
-  const btn = document.querySelector(".close-modal");
-  const modal = document.getElementById("instruction");
+  const btn = $(".close-modal");
+  const modal = $("#instruction");
 
   btn.addEventListener("click", () => {
     modal.classList.add("remove");
