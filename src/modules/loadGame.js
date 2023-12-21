@@ -2,11 +2,11 @@ import shuffle from "./shuffle";
 import loadImages from "./loadImages";
 import flipCard from "./flipCard";
 import { resetMovement } from "./movement";
-import { templateGameOver } from "./templates";
+import { templateGameOver, templateScoreGame } from "./templates";
 import { loadScore, scoreGame } from "./score";
 import $ from "./selector";
 
-let blockBoard = false;
+let timeFlip;
 
 function loadGame() {
   loadImages();
@@ -16,7 +16,8 @@ function loadGame() {
   const scoreElem = $(".score");
   //Play game
   btnStart.addEventListener("click", () => {
-    scoreElem.innerHTML = `Pontuação: 0`;
+    templateScoreGame(0);
+
     cards.forEach((card) => {
       card.removeEventListener("click", flipCard);
     });
@@ -29,24 +30,16 @@ function loadGame() {
     cards.forEach((card) => {
       card.classList.add("flip");
     });
+    if (timeFlip) {
+      clearTimeout(timeFlip);
+    }
 
-    const timeFlip = setTimeout(() => {
+    timeFlip = setTimeout(() => {
       cards.forEach((card) => {
         card.classList.remove("flip");
+        card.addEventListener("click", flipCard);
       });
-
-      clearTimeFlip();
     }, 5000);
-
-    function clearTimeFlip() {
-      clearTimeout(timeFlip);
-      blockBoard = true;
-      if (blockBoard) {
-        cards.forEach((card) => {
-          card.addEventListener("click", flipCard);
-        });
-      }
-    }
   });
 }
 

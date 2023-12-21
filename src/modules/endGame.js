@@ -1,6 +1,6 @@
 import $ from "./selector";
 import flipCard from "./flipCard";
-import { templateGameOver, templateWinerGame } from "./templates";
+import { templateGameOver } from "./templates";
 import { loadScore } from "./score";
 
 function endGame(winer = false) {
@@ -10,9 +10,9 @@ function endGame(winer = false) {
   });
 
   if (!winer) {
-    templateGameOver();
+    templateGameOver("lose");
   } else {
-    templateWinerGame();
+    templateGameOver("win");
   }
   loadScore();
 }

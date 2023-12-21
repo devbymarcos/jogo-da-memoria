@@ -22,16 +22,13 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 1rem;
   height: 100vh;
 }
 
 img {
   max-width: 100%;
-  width: 100%;
+  aspect-ratio: 1/1;
 }
 li {
   list-style: none;
@@ -81,7 +78,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px;
+  padding: 2px;
   color: var(--text-color);
 }
 
@@ -91,8 +88,10 @@ li {
 
 .board {
   width: 100%;
+  max-width: 890px;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 1rem;
   perspective: 1000px;
 }
@@ -184,21 +183,9 @@ li {
 }
 
 /*#### Responsivo #####*/
-@media (max-width: 550px) {
-  .card {
-    width: calc(90% / 3);
-    height: 90px;
-    position: relative;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-  }
-
-  body {
-    display: block;
-  }
-
+@media screen and (max-width: 550px) {
   .board {
-    padding: 8px;
+    margin-bottom: 2rem;
   }
   .header .title {
     font-size: 1.3rem;
@@ -206,5 +193,8 @@ li {
   .template-game-over,
   .template-winer-game {
     font-size: 1rem;
+  }
+  body {
+    height: auto;
   }
 }

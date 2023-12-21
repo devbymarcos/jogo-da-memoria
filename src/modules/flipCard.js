@@ -1,4 +1,3 @@
-import disableCards from "./disableCards";
 import { countMovement } from "./movement";
 import { scoreGame, updateBestScore } from "./score";
 import endGame from "./endGame";
@@ -60,4 +59,9 @@ function isFlipped() {
   if (control === cards.length) {
     endGame(true);
   }
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
 }
